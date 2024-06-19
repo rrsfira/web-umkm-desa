@@ -146,7 +146,7 @@ if(isset($_POST['konfirm'])) {
 
         $pesan .= $pecah["nama_barang"] . " - " . $jumlah . " x Rp. " . number_format($pecah["harga_jual"]) . " = Rp. " . number_format($subharga) . "\n";
 
-        $insert = mysqli_query($koneksi, "INSERT INTO pemesanan_produk (id_pemesanan, id_barang, jumlah) VALUES ('$id_terbaru', '$id_barang', '$jumlah')");
+        $insert = mysqli_query($koneksi, "INSERT INTO pemesanan_produk (id_pemesanan, id_barang, jumlah, tanggal_pemesanan, periode) VALUES ('$id_terbaru', '$id_barang', '$jumlah', '$tanggal_pemesanan', '$periode')");
     }
 
     // Mengosongkan pesanan
@@ -164,8 +164,6 @@ if(isset($_POST['konfirm'])) {
 }
 ?>
 
-
-
     </div>
     <!-- Akhir Menu -->
 
@@ -181,8 +179,6 @@ if(isset($_POST['konfirm'])) {
       </div>
     </div>
     <!-- Akhir Footer -->
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
